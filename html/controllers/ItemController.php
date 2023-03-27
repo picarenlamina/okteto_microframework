@@ -143,7 +143,7 @@ class ItemController
             $item->delete();
             flush(); // Flush the buffer
             ob_flush();
-            header("Location: index.php"));
+            header("Location: index.php");
         }
     }
 
