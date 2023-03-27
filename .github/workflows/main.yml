@@ -17,10 +17,10 @@ jobs:
     - uses: okteto/context@latest
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
-        name: mytest_picarenlamina
+        name: microframework_picarenlamina
         
     - name: Deploy application
       uses: okteto/deploy-stack@master
       with:
         build: "true"
-        namespace: mytest_picarenlamina
+        namespace: microframework_picarenlamina
