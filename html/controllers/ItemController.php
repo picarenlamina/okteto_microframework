@@ -70,8 +70,7 @@ class ItemController
                 $item->save();
 
                 // Finalmente llama al método listar para que devuelva vista con listado
-                flush(); // Flush the buffer
-                ob_flush();
+              
                 header("Location: index.php?controlador=item&accion=listar");
             }
         }
@@ -111,8 +110,7 @@ class ItemController
                 $item->save();
 
                 // Reenvía a la aplicación a la lista de items
-                flush(); // Flush the buffer
-                ob_flush();
+           
                 header("Location: index.php?controlador=item&accion=listar");
             }
         }
@@ -141,8 +139,7 @@ class ItemController
         } else {
             // Si existe lo elimina de la base de datos y vuelve al inicio de la aplicación
             $item->delete();
-            flush(); // Flush the buffer
-            ob_flush();
+        
             header("Location: index.php");
         }
     }
