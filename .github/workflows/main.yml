@@ -1,0 +1,26 @@
+# Source https://github.com/okteto/go-api-docker-compose/tree/main/.github/workflows
+
+name: MyPrueba
+
+on: 
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+    
+    - uses: okteto/context@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+        name: mytest_picarenlamina
+        
+    - name: Deploy application
+      uses: okteto/deploy-stack@master
+      with:
+        build: "true"
+        namespace: mytest_picarenlamina
