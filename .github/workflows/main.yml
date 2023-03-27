@@ -4,8 +4,7 @@ name: MyPrueba
 
 on: 
   push:
-    branches:
-      - main
+
 
 jobs:
   preview:
