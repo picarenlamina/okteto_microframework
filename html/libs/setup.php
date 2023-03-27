@@ -9,7 +9,8 @@ $config->set('viewsFolder', 'views/');
 
 // Parámetros de conexión a la BD
 $config->set('dbhost', 'localhost');
-$config->set('dbname', 'dwespruebas');
-$config->set('dbuser', 'super');
-$config->set('dbpass', '123456');
+$config->set('dbname', 'database_name');
+$config->set('dbuser', 'my_username');
+$config->set('dbpass', 'my_password');
 ?>
+
