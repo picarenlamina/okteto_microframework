@@ -12,5 +12,5 @@ $config->set('dbhost', 'mysql');
 $config->set('dbname', 'database_name');
 $config->set('dbuser', 'my_username');
 $config->set('dbpass', 'my_password');
-?>
+
 
