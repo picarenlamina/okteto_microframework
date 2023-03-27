@@ -1,0 +1,30 @@
+# source https://www.kodetop.com/crea-tu-ambiente-de-desarrollo-php-mysql-con-docker/
+# source https://www.section.io/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/
+version: "3"
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: database_name
+      MYSQL_USER: my_username
+      MYSQL_PASSWORD: my_password
+      MYSQL_ROOT_PASSWORD: my_password
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  web:
+    image: php:7.3-apache
+    container_name: php
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ./html:/var/www/html
+    links:
+      - mysql
