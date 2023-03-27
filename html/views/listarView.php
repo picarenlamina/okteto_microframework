@@ -31,7 +31,7 @@
         }
         ?>
     </table>
-    <a href="index.php?controlador=item&accion=nuevo">Nuevo</a>
+    <a href="index.php?controlador=Item&accion=nuevo">Nuevo</a>
 </body>
 
 </html>
